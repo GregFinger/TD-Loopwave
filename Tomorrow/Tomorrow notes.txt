@@ -1,0 +1,34 @@
+﻿Loopwave notes
+
+ENDCAP TEXTURE FIX USE NORMALS - SAMPLE BGD TEX
+
+optiFlow - putting res top right after video cam feed saves on fps
+
+3 things affect spin interaction. Optical flow “flow scale”, level top in feedback opacity, “Spin Intensity” on GLSL Top
+
+Switch Composite TOP in the Feedback to average and increase the Spin Intensity for some fun
+
+
+
+Audio drone
+
+Change sphere person marker/tracker
+
+
+Attractor position should maybe move in a loop from hips to head
+
+SeekTarget needs radius? Or is the radius particle.position - attractor.position?
+
+
+Use compute shader for attractor process? Why does pixel and compute shader look different with how they attract, and which one looks better. Maybe convert pixel into compute and use SharedMemory to speed it up (see Vincent Houze's GLSL workshop from the 2019 TD Summit for details)
+
+
+Tube spin: color video optiflow vs kinect hip uv pos
+
+Should target strength be based on amount of neighbors rather than time in scene?
+
+Notes for better fps
+
+Notes about illustrator, strokes and mask
+
+get rid of all absTime.seconds
