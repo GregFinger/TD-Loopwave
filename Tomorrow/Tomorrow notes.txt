@@ -30,5 +30,3 @@ Should target strength be based on amount of neighbors rather than time in scene
 Notes for better fps
 
 Notes about illustrator, strokes and mask
-
-get rid of all absTime.seconds
