@@ -9,11 +9,7 @@ optiFlow - putting res top right after video cam feed saves on fps
 Switch Composite TOP in the Feedback to average and increase the Spin Intensity for some fun
 
 
-
 Audio drone
-
-Change sphere person marker/tracker
-
 
 Attractor position should maybe move in a loop from hips to head
 
@@ -24,9 +20,61 @@ Use compute shader for attractor process? Why does pixel and compute shader look
 
 
 Tube spin: color video optiflow vs kinect hip uv pos
+if hip position, only people who are detected can spin the tubes which might lead to problems
 
 Should target strength be based on amount of neighbors rather than time in scene?
 
 Notes for better fps
 
 Notes about illustrator, strokes and mask
+
+
+~~~~~~~~~~~~~~~~
+any absTime.seconds that I haven't deleted?
+
+Texture errors
+Amoeba squiggles outside and loops around
+Cells (for black tube esp) don't have a good distance to travel (is the 270,540 hardcoded value based on another tube with cells?)
+
+Handle turning off Tubes that aren't active (render and everything else? maybe allowCooking? does the unwrap anim happening on all geos affect overall fps, or no because they're not getting rendered?) when another tube is uncurled
+
+send tubes far away and then use "active parameter" in instancing to disappear them
+
+tube 15 pattern spins (or hue change based on texcoord?)
+tube5,6 static needs to be individualized
+
+interaction error
+when it's in cooldown and the same tube is selected, it doesn't trigger the warm up phase in the next loop
+
+does audio 'shuffle1' in "tubes" need to always be cooking or can I use a selective null?
+
+see which tubes are missing statics or any other parts
+
+(maybe) when tube is unwraped and spin is affected by user movement, it should calculate the entire area, right now it's still split up by tube position
+
+some of the repeated patterns (tube 7) should get a hue change for every pattern section
+
+change x grid so there's no cooking TOPs
+
+Check some texture res sizes are 2050
+
+cell scale: find median, so large cells scale down more and small cells scale up more
+
+Image Output imageoutput - Image Output allows you to read/write arbitrary data to a image2D, image3D etc, GLSL uniform using imageStore() and imageLoad() GLSL. This allows for extra data to be stored/loaded during the render process, to be used later. The uniforms will be named one of these arrays, depending on the type of image output selected mTD2DImageOutputs[], mTD2DArrayImageOutputs[], mTD3DImageOutputs[], mTDCubeImageOutputs[]. Since only one image ouptut is currently supported, index [0] should always be used to access these. The buffer is cleared to 0 before every render.
+so inside your pixelshader you can use imageStore(mTD3DImageOutputs[0], ivec3(x,y,z), vec4(yourdata));
+then use a renderselect on the renderTOP .. and it will be the first index I think
+
+
+flock attractor use sdSphere() instead of distance()
+
+use custom attrib: virus hue shift to green and noise speed increase
+
+if all virus eliminated, trigger inactivity
+
+Virus particle reduction parameter should affect life/active
+
+marker/attractor only active after uncurl is finished
+
+stop kinect video from affecting spin once anim is confirmed
+
+remap pelvis x location to span all tubes, remember to scale it according to tube width. reference averager glsl
