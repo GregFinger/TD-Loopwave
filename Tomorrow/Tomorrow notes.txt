@@ -38,7 +38,7 @@ Cells (for black tube esp) don't have a good distance to travel (is the 270,540 
 
 Handle turning off Tubes that aren't active (render and everything else? maybe allowCooking? does the unwrap anim happening on all geos affect overall fps, or no because they're not getting rendered?) when another tube is uncurled
 
-send tubes far away and then use "active parameter" in instancing to disappear them
+[x] send tubes far away and then use "active parameter" in instancing to disappear them
 
 tube 15 pattern spins (or hue change based on texcoord?)
 tube5,6 static needs to be individualized
@@ -54,7 +54,7 @@ see which tubes are missing statics or any other parts
 
 some of the repeated patterns (tube 7) should get a hue change for every pattern section
 
-change x grid so there's no cooking TOPs
+change x grid so there's no cooking TOPs (all contained in GLSL MAT)
 
 Check some texture res sizes are 2050
 
@@ -73,8 +73,11 @@ if all virus eliminated, trigger inactivity
 
 Virus particle reduction parameter should affect life/active
 
-marker/attractor only active after uncurl is finished
+Infection COMP "instance count" should account for virus/particle reduction
 
-stop kinect video from affecting spin once anim is confirmed
+[x] marker/attractor only active after uncurl is finished
+
+[x] stop kinect video from affecting spin once anim is confirmed
 
 remap pelvis x location to span all tubes, remember to scale it according to tube width. reference averager glsl
+
