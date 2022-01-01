@@ -81,3 +81,4 @@ Infection COMP "instance count" should account for virus/particle reduction
 
 remap pelvis x location to span all tubes, remember to scale it according to tube width. reference averager glsl
 
+frameLoop in the gpu_flock/simParticles is terrible. It's for controlling the noise displacement speed on the virus particles. As attr time goes up, so does the speed (right now 1x-15x). sin() is to disguise the loop. I don't think it's written well
