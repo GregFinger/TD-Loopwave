@@ -34,9 +34,6 @@ Texture errors
 Amoeba squiggles outside and loops around
 Cells (for black tube esp) don't have a good distance to travel (is the 270,540 hardcoded value based on another tube with cells?)
 
-
-[x] send tubes far away and then use "active parameter" in instancing to disappear them
-
 tube 15 pattern spins (or hue change based on texcoord?)
 tube5,6 static needs to be individualized
 
@@ -64,6 +61,8 @@ then use a renderselect on the renderTOP .. and it will be the first index I thi
 flock attractor use sdSphere() instead of distance()
 
 if all virus eliminated, trigger inactivity
+
+delay attractor entrance after uncurl
 
 Virus particle reduction parameter should affect life/active
 
