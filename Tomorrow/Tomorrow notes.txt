@@ -30,13 +30,10 @@ Notes about illustrator, strokes and mask
 
 
 ~~~~~~~~~~~~~~~~
-any absTime.seconds that I haven't deleted?
-
 Texture errors
 Amoeba squiggles outside and loops around
 Cells (for black tube esp) don't have a good distance to travel (is the 270,540 hardcoded value based on another tube with cells?)
 
-Handle turning off Tubes that aren't active (render and everything else? maybe allowCooking? does the unwrap anim happening on all geos affect overall fps, or no because they're not getting rendered?) when another tube is uncurled
 
 [x] send tubes far away and then use "active parameter" in instancing to disappear them
 
@@ -64,20 +61,13 @@ Image Output imageoutput - Image Output allows you to read/write arbitrary data 
 so inside your pixelshader you can use imageStore(mTD3DImageOutputs[0], ivec3(x,y,z), vec4(yourdata));
 then use a renderselect on the renderTOP .. and it will be the first index I think
 
-
 flock attractor use sdSphere() instead of distance()
-
-use custom attrib: virus hue shift to green and noise speed increase
 
 if all virus eliminated, trigger inactivity
 
 Virus particle reduction parameter should affect life/active
 
 Infection COMP "instance count" should account for virus/particle reduction
-
-[x] marker/attractor only active after uncurl is finished
-
-[x] stop kinect video from affecting spin once anim is confirmed
 
 remap pelvis x location to span all tubes, remember to scale it according to tube width. reference averager glsl
 
