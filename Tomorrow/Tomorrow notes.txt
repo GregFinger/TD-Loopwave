@@ -1,4 +1,4 @@
-﻿Loopwave notes
+﻿ Loopwave notes
 
 ENDCAP TEXTURE FIX USE NORMALS - SAMPLE BGD TEX
 
@@ -31,14 +31,8 @@ Notes about illustrator, strokes and mask
 
 ~~~~~~~~~~~~~~~~
 Texture errors
-Amoeba squiggles outside and loops around
-Cells (for black tube esp) don't have a good distance to travel (is the 270,540 hardcoded value based on another tube with cells?)
 
-tube 15 pattern spins (or hue change based on texcoord?)
-tube5,6 static needs to be individualized
-
-interaction error
-when it's in cooldown and the same tube is selected, it doesn't trigger the warm up phase in the next loop
+(interaction error) when it's in cooldown and the same tube is selected, it doesn't trigger the warm up phase in the next loop
 
 does audio 'shuffle1' in "tubes" need to always be cooking or can I use a selective null?
 
@@ -50,24 +44,29 @@ some of the repeated patterns (tube 7) should get a hue change for every pattern
 
 change x grid so there's no cooking TOPs (all contained in GLSL MAT)
 
-Check some texture res sizes are 2050
-
 cell scale: find median, so large cells scale down more and small cells scale up more
-
-Image Output imageoutput - Image Output allows you to read/write arbitrary data to a image2D, image3D etc, GLSL uniform using imageStore() and imageLoad() GLSL. This allows for extra data to be stored/loaded during the render process, to be used later. The uniforms will be named one of these arrays, depending on the type of image output selected mTD2DImageOutputs[], mTD2DArrayImageOutputs[], mTD3DImageOutputs[], mTDCubeImageOutputs[]. Since only one image ouptut is currently supported, index [0] should always be used to access these. The buffer is cleared to 0 before every render.
-so inside your pixelshader you can use imageStore(mTD3DImageOutputs[0], ivec3(x,y,z), vec4(yourdata));
-then use a renderselect on the renderTOP .. and it will be the first index I think
 
 flock attractor use sdSphere() instead of distance()
 
-if all virus eliminated, trigger inactivity
-
 delay attractor entrance after uncurl
+(have render equal and player_count multiply by time_fraction)
+(delay when going up, instant when going down)
 
 Virus particle reduction parameter should affect life/active
 
 Infection COMP "instance count" should account for virus/particle reduction
 
-remap pelvis x location to span all tubes, remember to scale it according to tube width. reference averager glsl
+attractor model size and radius of influence size
+
+in chop from anim_process to tubes, and have all references come from that in
+
 
 frameLoop in the gpu_flock/simParticles is terrible. It's for controlling the noise displacement speed on the virus particles. As attr time goes up, so does the speed (right now 1x-15x). sin() is to disguise the loop. I don't think it's written well
+
+
+
+
+(potential different method to render all textures in one render) 
+Image Output imageoutput - Image Output allows you to read/write arbitrary data to a image2D, image3D etc, GLSL uniform using imageStore() and imageLoad() GLSL. This allows for extra data to be stored/loaded during the render process, to be used later. The uniforms will be named one of these arrays, depending on the type of image output selected mTD2DImageOutputs[], mTD2DArrayImageOutputs[], mTD3DImageOutputs[], mTDCubeImageOutputs[]. Since only one image ouptut is currently supported, index [0] should always be used to access these. The buffer is cleared to 0 before every render.
+so inside your pixelshader you can use imageStore(mTD3DImageOutputs[0], ivec3(x,y,z), vec4(yourdata));
+then use a renderselect on the renderTOP .. and it will be the first index I think
