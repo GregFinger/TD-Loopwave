@@ -48,10 +48,6 @@ cell scale: find median, so large cells scale down more and small cells scale up
 
 flock attractor use sdSphere() instead of distance()
 
-delay attractor entrance after uncurl
-(have render equal and player_count multiply by time_fraction)
-(delay when going up, instant when going down)
-
 Virus particle reduction parameter should affect life/active
 
 Infection COMP "instance count" should account for virus/particle reduction
