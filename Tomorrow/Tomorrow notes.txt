@@ -52,8 +52,6 @@ Virus particle reduction parameter should affect life/active
 
 Infection COMP "instance count" should account for virus/particle reduction
 
-attractor model size and radius of influence size
-
 in chop from anim_process to tubes, and have all references come from that in
 
 
