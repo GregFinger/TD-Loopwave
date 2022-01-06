@@ -49,15 +49,13 @@ cell scale: find median, so large cells scale down more and small cells scale up
 flock attractor use sdSphere() instead of distance()
 
 Virus particle reduction parameter should affect life/active
+- actually maybe not. this might have to do with, in "Attract" mode, only half the virus is full scale (see 'init_size' top), and as you attract others, their scale grows larger. see virus vertex shader line: Virus.scale += ((Virus.scale - 1.0) * -1.0) * (Virus.attrTime / uAttrDur);
 
-Infection COMP "instance count" should account for virus/particle reduction
 
 in chop from anim_process to tubes, and have all references come from that in
 
 
 frameLoop in the gpu_flock/simParticles is terrible. It's for controlling the noise displacement speed on the virus particles. As attr time goes up, so does the speed (right now 1x-15x). sin() is to disguise the loop. I don't think it's written well
-
-
 
 
 (potential different method to render all textures in one render) 
