@@ -51,6 +51,7 @@ flock attractor use sdSphere() instead of distance()
 Virus particle reduction parameter should affect life/active
 - actually maybe not. this might have to do with, in "Attract" mode, only half the virus is full scale (see 'init_size' top), and as you attract others, their scale grows larger. see virus vertex shader line: Virus.scale += ((Virus.scale - 1.0) * -1.0) * (Virus.attrTime / uAttrDur);
 
+Reference old Loopwave project for ^this^ and how strength is used
 
 in chop from anim_process to tubes, and have all references come from that in
 
