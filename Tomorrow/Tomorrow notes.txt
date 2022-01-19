@@ -1,6 +1,4 @@
-﻿ Loopwave notes
-
-ENDCAP TEXTURE FIX USE NORMALS - SAMPLE BGD TEX
+﻿ENDCAP TEXTURE FIX USE NORMALS - SAMPLE BGD TEX
 
 optiFlow - putting res top right after video cam feed saves on fps
 
@@ -30,9 +28,9 @@ Notes about illustrator, strokes and mask
 
 
 ~~~~~~~~~~~~~~~~
-Texture errors
-
 (interaction error) when it's in cooldown and the same tube is selected, it doesn't trigger the warm up phase in the next loop
+
+sometimes, right at the point when a tube is finished getting filled and the person moves to another tube, the first tube will unfill (but still go through the selected animation process) and the second tube will start filling, but eventually disappear with the others. Then the first tube has a glitchy uncurl process and uncurls as a transparent texture
 
 does audio 'shuffle1' in "tubes" need to always be cooking or can I use a selective null?
 
@@ -42,9 +40,9 @@ see which tubes are missing statics or any other parts
 
 some of the repeated patterns (tube 7) should get a hue change for every pattern section
 
-change x grid so there's no cooking TOPs (all contained in GLSL MAT)
+change x-grid so there's no cooking TOPs (all contained in GLSL MAT)
 
-cell scale: find median, so large cells scale down more and small cells scale up more
+cell [tox] scale: find median, so large cells scale down more and small cells scale up more
 
 flock attractor use sdSphere() instead of distance()
 
