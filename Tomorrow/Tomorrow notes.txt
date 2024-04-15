@@ -1,4 +1,6 @@
-﻿ENDCAP TEXTURE FIX USE NORMALS - SAMPLE BGD TEX
+﻿FIX VIRUS MODE / WHY DOES UNCURL MODE TURN OFF VIRUS?
+
+ENDCAP TEXTURE FIX USE NORMALS - SAMPLE BGD TEX
 
 optiFlow - putting res top right after video cam feed saves on fps
 
